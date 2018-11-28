@@ -14,8 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-27T23:47:32-07:00">2018-11-27T23:47:32-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-28T07:25:57-07:00">2018-11-28T07:25:57-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -32,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>22</b> files in total.
-    <b>73</b> relevant lines. 
-    <span class="green"><b>73</b> lines covered</span> and
+    <b>23</b> files in total.
+    <b>76</b> relevant lines. 
+    <span class="green"><b>76</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -145,6 +144,16 @@
         <td class="strong"><a href="#b1d403e96fda99cf1803e0febf6b80fb4337f8d1" class="src_link" title="app/models/transaction.rb">app/models/transaction.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#3977875ee442696ddd70e8ad8bcdf8aa379afe54" class="src_link" title="app/serializers/merchant_serializer.rb">app/serializers/merchant_serializer.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
         <td>3</td>
         <td>3</td>
         <td>0</td>
@@ -371,7 +380,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">    render json: Merchant.all</code>
+          <code class="ruby">    render json: MerchantSerializer.new(Merchant.all).serializable_hash</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -791,6 +800,49 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="3977875ee442696ddd70e8ad8bcdf8aa379afe54">
+  <div class="header">
+    <h3>app/serializers/merchant_serializer.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class MerchantSerializer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  include FastJsonapi::ObjectSerializer</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attributes :id, :name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">end</code>
