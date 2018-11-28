@@ -188,6 +188,8 @@
       "/Users/jaw/Turing/3module/projects/rales_engine/app/models/customer.rb": [
         1,
         1,
+        null,
+        1,
         1,
         null
       ],
@@ -199,11 +201,15 @@
       "/Users/jaw/Turing/3module/projects/rales_engine/app/models/invoice_item.rb": [
         1,
         1,
+        null,
+        1,
         1,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/models/invoice.rb": [
         1,
+        1,
+        null,
         1,
         1,
         1,
@@ -214,17 +220,23 @@
       "/Users/jaw/Turing/3module/projects/rales_engine/app/models/item.rb": [
         1,
         1,
+        null,
+        1,
         1,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/models/merchant.rb": [
         1,
         1,
+        null,
+        1,
         1,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/models/transaction.rb": [
         1,
+        1,
+        null,
         1,
         null
       ],
@@ -248,6 +260,7 @@
         null
       ]
     },
-    "timestamp": 1543389156
+
+    "timestamp": 1543387652
   }
 }
