@@ -26,43 +26,43 @@ namespace :import do
     items_csv = File.join Rails.root, "data/items.csv"
     CSV.foreach(items_csv, headers: true) do |row|
       Item.create(id: row["id"],
-        name: row["name"],
-        description: row["description"],
-        unit_price: row["unit_price"],
-        created_at: row["created_at"],
-        updated_at: row["updated_at"])
+                  name: row["name"],
+                  description: row["description"],
+                  unit_price: row["unit_price"],
+                  created_at: row["created_at"],
+                  updated_at: row["updated_at"])
     end
 
 
     invoices_csv = File.join Rails.root, "data/invoices.csv"
     CSV.foreach(invoices_csv, headers: true) do |row|
-      invoice = Invoice.create(id: row["id"],
-        status: row["status"],
-        created_at: row["created_at"],
-        updated_at: row["updated_at"],
-        merchant_id: row["merchant_id"],
-        customer_id: row["customer_id"])
+      Invoice.create(id: row["id"],
+                     status: row["status"],
+                     created_at: row["created_at"],
+                     updated_at: row["updated_at"],
+                     merchant_id: row["merchant_id"],
+                     customer_id: row["customer_id"])
     end
 
     transactions_csv = File.join Rails.root, "data/transactions.csv"
     CSV.foreach(transactions_csv, headers: true) do |row|
-      transaction = Transaction.create(id: row["id"],
-        credit_card_number: row["credit_card_number"],
-        credit_card_expiration_date: row["credit_card_expiration_date"],
-        created_at: row["created_at"],
-        updated_at: row["updated_at"],
-        invoice_id: row["invoice_id"])
+      Transaction.create(id: row["id"],
+                         credit_card_number: row["credit_card_number"],
+                         credit_card_expiration_date: row["credit_card_expiration_date"],
+                         created_at: row["created_at"],
+                         updated_at: row["updated_at"],
+                         invoice_id: row["invoice_id"])
     end
 
     invoice_items_csv = File.join Rails.root, "data/invoice_items.csv"
     CSV.foreach(invoice_items_csv, headers: true) do |row|
-      invoice_item = InvoiceItem.create(id: row["id"],
-                                        quantity: row["quantity"],
-                                        unit_price: row["unit_price"],
-                                        created_at: row["created_at"],
-                                        updated_at: row["updated_at"],
-                                        item_id: row["item_id"],
-                                        invoice_id: row["invoice_id"])
+      InvoiceItem.create(id: row["id"],
+                         quantity: row["quantity"],
+                         unit_price: row["unit_price"],
+                         created_at: row["created_at"],
+                         updated_at: row["updated_at"],
+                         item_id: row["item_id"],
+                         invoice_id: row["invoice_id"])
     end
 
 

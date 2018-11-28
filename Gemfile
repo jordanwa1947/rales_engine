@@ -14,8 +14,10 @@ gem 'puma', '~> 3.7'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+  gem 'fast_jsonapi'
   gem 'factory_bot_rails'
   gem 'simplecov'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'pry'
 end
 
