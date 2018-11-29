@@ -231,6 +231,32 @@
         null,
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/models/transaction.rb": [
@@ -258,9 +284,14 @@
         1,
         null,
         null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/merchant_serializer.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-
-    "timestamp": 1543387652
+    "timestamp": 1543517335
   }
 }
