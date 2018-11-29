@@ -29,4 +29,12 @@ class Merchant < ApplicationRecord
     .select('SUM(invoice_items.quantity * invoice_items.unit_price) AS date_revenue')[0]
     .date_revenue
   end
+
+  def total_single_merch_rev
+    invoices
+    .joins(:invoice_items, :transactions)
+    .where(transactions: {result: 'success'})
+    .select('SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue')[0]
+    .revenue
+  end
 end

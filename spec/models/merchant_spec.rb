@@ -54,14 +54,14 @@ RSpec.describe Merchant, type: :model do
 
   describe 'Instance Methods' do
     before(:each) do
-      @merchant_1 = create(:merchant)
+      @merchant = create(:merchant)
 
       customer = create(:customer)
       customer_2 = create(:customer)
 
-      invoice_1 = create(:invoice, merchant_id: @merchant_1.id, customer_id: customer.id, status: 'success', created_at: 2.day.ago, updated_at: 1.day.ago)
-      invoice_2 = create(:invoice, merchant_id: @merchant_1.id, customer_id: customer_2.id, status: 'success')
-      invoice_3 = create(:invoice, merchant_id: @merchant_1.id, customer_id: customer_2.id, status: 'success')
+      invoice_1 = create(:invoice, merchant_id: @merchant.id, customer_id: customer.id, status: 'success', created_at: 2.day.ago, updated_at: 1.day.ago)
+      invoice_2 = create(:invoice, merchant_id: @merchant.id, customer_id: customer_2.id, status: 'success')
+      invoice_3 = create(:invoice, merchant_id: @merchant.id, customer_id: customer_2.id, status: 'success')
 
       create(:transaction, invoice_id: invoice_1.id)
       create(:transaction, invoice_id: invoice_2.id)
@@ -75,7 +75,7 @@ RSpec.describe Merchant, type: :model do
     end
 
     it 'total_single_merch_rev' do
-
+      expect(@merchant.total_single_merch_rev).to eq(3800)
     end
   end
 end
