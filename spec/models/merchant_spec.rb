@@ -59,8 +59,8 @@ RSpec.describe Merchant, type: :model do
       customer = create(:customer)
       customer_2 = create(:customer)
 
-      invoice_1 = create(:invoice, merchant_id: @merchant.id, customer_id: customer.id, status: 'success', created_at: 2.day.ago, updated_at: 1.day.ago)
-      invoice_2 = create(:invoice, merchant_id: @merchant.id, customer_id: customer_2.id, status: 'success')
+      invoice_1 = create(:invoice, merchant_id: @merchant.id, customer_id: customer.id, status: 'success')
+      invoice_2 = create(:invoice, merchant_id: @merchant.id, customer_id: customer_2.id, status: 'success', created_at: 2.days.ago, updated_at: 1.day.ago)
       invoice_3 = create(:invoice, merchant_id: @merchant.id, customer_id: customer_2.id, status: 'success')
 
       create(:transaction, invoice_id: invoice_1.id)
@@ -70,12 +70,16 @@ RSpec.describe Merchant, type: :model do
       item = create(:item)
 
       create(:invoice_item, invoice_id: invoice_1.id, item_id: item.id, quantity: 16, unit_price: 50)
-      create(:invoice_item, invoice_id: invoice_2.id, item_id: item.id, quantity: 2, unit_price: 300, created_at: 2.days.ago, updated_at: 1.day.ago)
+      create(:invoice_item, invoice_id: invoice_2.id, item_id: item.id, quantity: 2, unit_price: 300)
       create(:invoice_item, invoice_id: invoice_3.id, item_id: item.id, quantity: 12, unit_price: 200)
     end
 
     it 'total_single_merch_rev' do
       expect(@merchant.total_single_merch_rev).to eq(3800)
+    end
+
+    it 'total_single_merch_rev_by_date' do
+      expect(@merchant.total_merch_rev_by_date(1.day.ago)).to eq(600)
     end
   end
 end

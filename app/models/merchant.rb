@@ -34,6 +34,16 @@ class Merchant < ApplicationRecord
     invoices
     .joins(:invoice_items, :transactions)
     .where(transactions: {result: 'success'})
+    .where(invoices: {updated_at: date.beginning_of_day..date.end_of_day})
+    .select('SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue')[0]
+    .revenue
+  end
+
+  def total_merch_rev_by_date(date)
+    invoices
+    .joins(:invoice_items, :transactions)
+    .where(transactions: {result: 'success'})
+    .where(invoices: {updated_at: date.beginning_of_day..date.end_of_day})
     .select('SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue')[0]
     .revenue
   end
