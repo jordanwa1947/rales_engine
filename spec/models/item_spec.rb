@@ -11,4 +11,14 @@ RSpec.describe Item, type: :model do
     it { should validate_presence_of :description }
     it { should validate_presence_of :unit_price }
   end
+
+  describe 'Class Methods' do
+    before(:each) do
+
+    end
+
+    it 'top_rev_items' do
+
+    end 
+  end
 end

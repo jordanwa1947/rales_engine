@@ -34,7 +34,6 @@ class Merchant < ApplicationRecord
     invoices
     .joins(:invoice_items, :transactions)
     .where(transactions: {result: 'success'})
-    .where(invoices: {updated_at: date.beginning_of_day..date.end_of_day})
     .select('SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue')[0]
     .revenue
   end
@@ -46,5 +45,21 @@ class Merchant < ApplicationRecord
     .where(invoices: {updated_at: date.beginning_of_day..date.end_of_day})
     .select('SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue')[0]
     .revenue
+  end
+
+  def find_favorite_customer
+    invoices
+    .select('customers.id AS id, COUNT(customers.id) AS transaction_count')
+    .joins(:transactions)
+    .joins('INNER JOIN customers ON invoices.customer_id = customers.id')
+    .where(transactions: {result: 'success'})
+    .group('customers.id')
+    .order('transaction_count DESC')
+    .limit(1)
+  end
+
+  def favorite_customer
+    customer = find_favorite_customer
+    Customer.find(customer[0].id)
   end
 end

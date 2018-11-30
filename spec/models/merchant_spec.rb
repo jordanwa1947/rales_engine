@@ -51,17 +51,16 @@ RSpec.describe Merchant, type: :model do
       expect(Merchant.total_rev_by_date(Date.today)).to eq(4500)
     end
   end
-
   describe 'Instance Methods' do
     before(:each) do
       @merchant = create(:merchant)
 
-      customer = create(:customer)
-      customer_2 = create(:customer)
+      @customer = create(:customer)
+      @customer_2 = create(:customer)
 
-      invoice_1 = create(:invoice, merchant_id: @merchant.id, customer_id: customer.id, status: 'success')
-      invoice_2 = create(:invoice, merchant_id: @merchant.id, customer_id: customer_2.id, status: 'success', created_at: 2.days.ago, updated_at: 1.day.ago)
-      invoice_3 = create(:invoice, merchant_id: @merchant.id, customer_id: customer_2.id, status: 'success')
+      invoice_1 = create(:invoice, merchant_id: @merchant.id, customer_id: @customer.id, status: 'success')
+      invoice_2 = create(:invoice, merchant_id: @merchant.id, customer_id: @customer_2.id, status: 'success', created_at: 2.days.ago, updated_at: 1.day.ago)
+      invoice_3 = create(:invoice, merchant_id: @merchant.id, customer_id: @customer_2.id, status: 'success')
 
       create(:transaction, invoice_id: invoice_1.id)
       create(:transaction, invoice_id: invoice_2.id)
@@ -80,6 +79,10 @@ RSpec.describe Merchant, type: :model do
 
     it 'total_single_merch_rev_by_date' do
       expect(@merchant.total_merch_rev_by_date(1.day.ago)).to eq(600)
+    end
+
+    it 'favorite_customer' do
+      expect(@merchant.favorite_customer).to eq(@customer_2)
     end
   end
 end
