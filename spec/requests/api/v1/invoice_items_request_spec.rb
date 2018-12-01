@@ -9,7 +9,6 @@ describe 'Invoice Item Requests' do
     expect(response).to be_successful
 
     invoice_items = JSON.parse(response.body)
-    binding.pry 
     expect(invoice_items["data"].count).to eq(3)
   end
 end
