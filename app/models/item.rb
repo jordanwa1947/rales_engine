@@ -21,4 +21,15 @@ class Item < ApplicationRecord
     .order('item_quant DESC')
     .limit(limit_amount)
   end
+
+  def top_rev_date_for_item(date)
+    invoices
+    .select('invoices.updated_at, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue')
+    .joins(:invoice_items, :transactions)
+    .where(transactions: {result: 'success'})
+    .group('invoices.updated_at')
+    .order('revenue DESC')
+    .limit(1)[0]
+    .updated_at
+  end
 end

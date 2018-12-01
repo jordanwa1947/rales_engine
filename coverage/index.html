@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-30T18:12:57-07:00">2018-11-30T18:12:57-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-30T19:03:16-07:00">2018-11-30T19:03:16-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">89.41%</span></span>
+    (<span class="covered_percent"><span class="yellow">88.51%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.9
+         0.89
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>19</b> files in total.
-    <b>85</b> relevant lines. 
-    <span class="green"><b>76</b> lines covered</span> and
-    <span class="red"><b>9</b> lines missed </span>
+    <b>87</b> relevant lines. 
+    <span class="green"><b>77</b> lines covered</span> and
+    <span class="red"><b>10</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -92,12 +92,12 @@
       
       <tr>
         <td class="strong"><a href="#1f49ddf7d87fe31d7e9fea30157543d5a9eb0f55" class="src_link" title="app/models/item.rb">app/models/item.rb</a></td>
-        <td class="yellow strong">87.5 %</td>
-        <td>24</td>
+        <td class="red strong">80.0 %</td>
+        <td>35</td>
+        <td>10</td>
         <td>8</td>
-        <td>7</td>
-        <td>1</td>
-        <td>0.9</td>
+        <td>2</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -479,11 +479,11 @@
         <div class="source_table" id="1f49ddf7d87fe31d7e9fea30157543d5a9eb0f55">
   <div class="header">
     <h3>app/models/item.rb</h3>
-    <h4><span class="yellow">87.5 %</span> covered</h4>
+    <h4><span class="red">80.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>10</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -616,8 +616,8 @@
           <code class="ruby">    .order(&#39;item_quant DESC&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
           
           <code class="ruby">    .limit(limit_amount)</code>
         </li>
@@ -629,6 +629,72 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def top_rev_date_for_item(date)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">    invoices</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    .select(&#39;invoices.updated_at, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">    .joins(:invoice_items, :transactions)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    .where(transactions: {result: &#39;success&#39;})</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    .group(&#39;invoices.updated_at&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">    .order(&#39;revenue DESC&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">    .limit(1)[0]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    .updated_at</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">end</code>
