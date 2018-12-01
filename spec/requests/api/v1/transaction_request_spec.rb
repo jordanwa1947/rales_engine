@@ -15,11 +15,12 @@ describe 'Transaction Api Requests' do
   it 'loads a specified instance of transaction' do
     create_list(:transaction, 3)
 
-    get '/api/v1/transactions/find?credit_card_number = 2'
+    get "/api/v1/transactions/find?credit_card_number=#{Transaction.second.credit_card_number}"
 
     expect(response).to be_successful
 
     transactions = JSON.parse(response.body)
-    expect(transactions["data"]["credit_card_number"]).to eq(2)
+
+    expect(transactions["data"]["attributes"]["credit_card_number"]).to eq(Transaction.second.credit_card_number)
   end
 end

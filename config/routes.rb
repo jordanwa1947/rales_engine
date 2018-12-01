@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/api/v1/merchants/find', to: 'transactions#show'
+      get 'transactions/find', to: 'find_transactions#show'
     end
   end
 end

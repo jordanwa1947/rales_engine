@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   end
 
   def self.top_quant_items(limit_amount)
-    select('items.*, COUNT(invoice_items.quantity) AS item_quant')
+    select('items.*, SUM(invoice_items.quantity) AS item_quant')
     .joins(invoices: [:invoice_items, :transactions])
     .where(transactions: {result: 'success'})
     .group('items.id')
