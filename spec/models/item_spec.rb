@@ -48,5 +48,9 @@ RSpec.describe Item, type: :model do
     it 'top_rev_items' do
       expect(Item.top_rev_items(3)).to eq([@item_2, @item_3, @item_1])
     end
+
+    it 'top_quant_items' do
+      expect(Item.top_quant_items(3)).to eq([@item_1, @item_2, @item_3])
+    end
   end
 end
