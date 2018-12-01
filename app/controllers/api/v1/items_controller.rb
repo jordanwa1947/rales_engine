@@ -1,3 +1,6 @@
-class Api::V1::ItemController < ApplicationController
+class Api::V1::ItemsController < ApplicationController
 
-end 
+  def index
+    render json: ItemSerializer.new(Item.all).serializable_hash
+  end 
+end
