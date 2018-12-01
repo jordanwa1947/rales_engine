@@ -167,7 +167,7 @@
         null,
         null,
         1,
-        2,
+        1,
         null,
         null,
         null,
@@ -296,25 +296,8 @@
         0,
         null,
         null
-      ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/transactions_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/application_controller.rb": [
-        1,
-        null
-      ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/transaction_serializer.rb": [
-        1,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1543637118
+    "timestamp": 1543638370
   }
 }
