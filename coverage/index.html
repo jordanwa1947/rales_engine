@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-30T19:03:16-07:00">2018-11-30T19:03:16-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-30T20:18:35-07:00">2018-11-30T20:18:35-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">88.51%</span></span>
+    (<span class="covered_percent"><span class="yellow">87.23%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -31,10 +31,10 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>19</b> files in total.
-    <b>87</b> relevant lines. 
-    <span class="green"><b>77</b> lines covered</span> and
-    <span class="red"><b>10</b> lines missed </span>
+    <b>21</b> files in total.
+    <b>94</b> relevant lines. 
+    <span class="green"><b>82</b> lines covered</span> and
+    <span class="red"><b>12</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -51,6 +51,26 @@
     <tbody>
       
       <tr>
+        <td class="strong"><a href="#f414485657dd49768b34bb84eeccd8f425a84f65" class="src_link" title="app/controllers/api/v1/invoice_items_controller.rb">app/controllers/api/v1/invoice_items_controller.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#80a7b81715e261ba8904ff42b75752d75dcee5de" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#879f0fa944d24129515f801703796f5bf67f5041" class="src_link" title="app/models/application_record.rb">app/models/application_record.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>3</td>
@@ -62,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#70222cb1e97c309500e40cb4ce79ccb323acaec2" class="src_link" title="app/models/customer.rb">app/models/customer.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="yellow strong">83.33 %</td>
+        <td>16</td>
         <td>6</td>
-        <td>4</td>
-        <td>4</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td>5</td>
+        <td>1</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -92,12 +112,12 @@
       
       <tr>
         <td class="strong"><a href="#1f49ddf7d87fe31d7e9fea30157543d5a9eb0f55" class="src_link" title="app/models/item.rb">app/models/item.rb</a></td>
-        <td class="red strong">80.0 %</td>
+        <td class="red strong">70.0 %</td>
         <td>35</td>
         <td>10</td>
-        <td>8</td>
-        <td>2</td>
-        <td>0.8</td>
+        <td>7</td>
+        <td>3</td>
+        <td>0.7</td>
       </tr>
       
       <tr>
@@ -111,9 +131,9 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#b1d403e96fda99cf1803e0febf6b80fb4337f8d1" class="src_link" title="app/models/transaction.rb">app/models/transaction.rb</a></td>
+        <td class="strong"><a href="#5952d38024da598728c1fb1fb0eaa85dab6f1a4d" class="src_link" title="app/serializers/invoice_item_serializer.rb">app/serializers/invoice_item_serializer.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>5</td>
+        <td>4</td>
         <td>3</td>
         <td>3</td>
         <td>0</td>
@@ -227,15 +247,15 @@
         <td>2</td>
         <td>2</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#f948e809a8bbda0cb81174917fc54cfdb9ad9395" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>5</td>
-        <td>5</td>
+        <td>9</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -255,6 +275,86 @@
       </div>
     
       <div class="source_files">
+      
+        <div class="source_table" id="f414485657dd49768b34bb84eeccd8f425a84f65">
+  <div class="header">
+    <h3>app/controllers/api/v1/invoice_items_controller.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Api::V1::InvoiceItemsController &lt; ApplicationController</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def index</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    render json: InvoiceItemSerializer.new(InvoiceItem.all).serializable_hash</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="80a7b81715e261ba8904ff42b75752d75dcee5de">
+  <div class="header">
+    <h3>app/controllers/application_controller.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>1</b> relevant lines. 
+      <span class="green"><b>1</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class ApplicationController &lt; ActionController::API</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
       
         <div class="source_table" id="879f0fa944d24129515f801703796f5bf67f5041">
   <div class="header">
@@ -296,11 +396,11 @@
         <div class="source_table" id="70222cb1e97c309500e40cb4ce79ccb323acaec2">
   <div class="header">
     <h3>app/models/customer.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">83.33 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -322,7 +422,7 @@
         <li class="never" data-hits="" data-linenumber="3">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
@@ -338,6 +438,66 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def favorite_customer_merchant(customer_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">    Merchant.select(&#39;merchants.*, COUNT(transactions.id) AS merchant_transactions&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    .joins(invoices: [:transactions])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    .where(invoices: {customer_id: customer_id})</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    .where(transactions: {result: &#39;success&#39;})</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    .group(&#39;merchants.id&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">    .order(&#39;merchant_transactions DESC&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">    .limit(1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
@@ -479,11 +639,11 @@
         <div class="source_table" id="1f49ddf7d87fe31d7e9fea30157543d5a9eb0f55">
   <div class="header">
     <h3>app/models/item.rb</h3>
-    <h4><span class="red">80.0 %</span> covered</h4>
+    <h4><span class="red">70.0 %</span> covered</h4>
     <div>
       <b>10</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -682,8 +842,8 @@
           <code class="ruby">    .limit(1)[0]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
           
           <code class="ruby">    .updated_at</code>
         </li>
@@ -1114,9 +1274,9 @@
 </div>
 
       
-        <div class="source_table" id="b1d403e96fda99cf1803e0febf6b80fb4337f8d1">
+        <div class="source_table" id="5952d38024da598728c1fb1fb0eaa85dab6f1a4d">
   <div class="header">
-    <h3>app/models/transaction.rb</h3>
+    <h3>app/serializers/invoice_item_serializer.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>3</b> relevant lines. 
@@ -1131,28 +1291,22 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Transaction &lt; ApplicationRecord</code>
+          <code class="ruby">class InvoiceItemSerializer</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_presence_of :invoice_id, :credit_card_number</code>
+          <code class="ruby">  include FastJsonapi::ObjectSerializer</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  belongs_to :invoice</code>
+          <code class="ruby">  attributes :id, :quantity, :unit_price, :item_id, :invoice_id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">end</code>
@@ -2237,8 +2391,8 @@
           <code class="ruby">ActiveSupport.on_load(:action_controller) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
           <code class="ruby">  wrap_parameters format: [:json]</code>
         </li>
@@ -2289,8 +2443,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2328,19 +2482,25 @@
           <code class="ruby">      resources :customers, only: [:index]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      resources :invoice_items, only: [:index]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
