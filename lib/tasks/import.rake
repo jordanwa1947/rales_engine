@@ -34,6 +34,7 @@ namespace :import do
     items_csv = File.join Rails.root, "data/items.csv"
     CSV.foreach(items_csv, headers: true) do |row|
       Item.create(id: row["id"],
+                  merchant_id: row["merchant_id"],
                   name: row["name"],
                   description: row["description"],
                   unit_price: row["unit_price"],
