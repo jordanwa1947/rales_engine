@@ -12,12 +12,20 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      namespace :merchants do
+        get '/find', to: 'find#show'
+        get '/find_all', to: 'find#index'
+        get '/:id/items', to: 'item_association#index'
+      end
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
       get 'transactions/find', to: 'find_transactions#show'
       get 'transactions/find_all', to: 'find_transactions#index'
       get 'customers/find', to: 'find_customers#show'
       get 'customers/find_all', to: 'find_customers#index'
-      get 'merchants/find', to: 'find_merchants#show'
-      get 'merchants/find_all', to: 'find_merchants#index'
       get 'items/find', to: 'find_items#show'
       get 'items/find_all', to: 'find_items#index'
       get 'invoices/find', to: 'find_invoices#show'

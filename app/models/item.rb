@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   has_many :invoice_items
   has_many :invoices, through: :invoice_items
 
-  extend FindMethods 
+  extend FindMethods
 
   def self.top_rev_items(limit_amount)
     select('items.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS item_rev')

@@ -1,4 +1,4 @@
-class Api::V1::FindMerchantsController < ApplicationController
+class Api::V1::Merchants::FindController < ApplicationController
 
   def show
     merchant = Merchant.find_by_given_param(merchant_params)
