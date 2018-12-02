@@ -17,6 +17,7 @@ class Api::V1::FindItemsController < ApplicationController
                    :description,
                    :unit_price,
                    :created_at,
-                   :updated_at)
+                   :updated_at,
+                   :id)
   end
 end
