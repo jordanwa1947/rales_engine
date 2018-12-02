@@ -26,10 +26,10 @@ RSpec.describe Transaction, type: :model do
 
       @transaction_1 = create(:transaction, invoice_id: invoice_1.id)
       @transaction_2 = create(:transaction, invoice_id: invoice_2.id)
-      @transaction_3 = create(:transaction, invoice_id: invoice_3.id)
-      @transaction_4 = create(:transaction, invoice_id: invoice_4.id)
-      @transaction_5 = create(:transaction, invoice_id: invoice_5.id)
-      @transaction_6 = create(:transaction, invoice_id: invoice_6.id)
+      @transaction_3 = create(:transaction, invoice_id: invoice_3.id, result: "failed")
+      @transaction_4 = create(:transaction, invoice_id: invoice_4.id, created_at: 2.days.ago, updated_at: 1.day.ago)
+      @transaction_5 = create(:transaction, invoice_id: invoice_5.id, created_at: 2.days.ago, updated_at: 1.day.ago)
+      @transaction_6 = create(:transaction, invoice_id: invoice_6.id, result: "failed")
 
       item_1 = create(:item)
       item_2 = create(:item)
@@ -45,8 +45,16 @@ RSpec.describe Transaction, type: :model do
 
     it 'find_by_given_param' do
       transaction = Transaction.find_by_given_param({"credit_card_number"=>"#{@transaction_2["credit_card_number"]}", "controller"=>"api/v1/find_transactions", "action"=>"show"})
+      transaction_by_date = Transaction.find_by_given_param({"updated_at"=>1.day.ago, "controller"=>"api/v1/find_transactions", "action"=>"show"})
 
       expect(transaction["credit_card_number"]).to eq(@transaction_2.credit_card_number)
+      expect(transaction["updated_at"]).to eq(@transaction_2.updated_at)
+    end
+
+    it 'find_all_by_given_param' do
+      transaction = Transaction.find_all_by_given_param({"result"=>"failed", "controller"=>"api/v1/find_transactions", "action"=>"index"})
+
+      expect(transaction).to eq([@transaction_3, @transaction_6])
     end
   end
 end

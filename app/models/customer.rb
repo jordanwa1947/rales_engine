@@ -13,4 +13,10 @@ class Customer < ApplicationRecord
     .order('merchant_transactions DESC')
     .limit(1)
   end
+
+  def self.find_by_given_param(query_params)
+    query = query_params.to_h.first
+    customer = find_by("#{query[0]} = ?", query[1])
+    customer
+  end
 end

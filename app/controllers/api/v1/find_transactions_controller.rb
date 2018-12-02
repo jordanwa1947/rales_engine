@@ -1,11 +1,13 @@
 class Api::V1::FindTransactionsController < ApplicationController
 
   def index
-
+    transaction = Transaction.find_all_by_given_param(query_params)
+    render json: TransactionSerializer.new(transaction).serializable_hash
   end
 
   def show
-    render json: TransactionSerializer.new(Transaction.find_by_given_param(query_params)).serializable_hash
+    transactions = Transaction.find_by_given_param(query_params)
+    render json: TransactionSerializer.new(transactions).serializable_hash
   end
 
   private
