@@ -24,4 +24,18 @@ describe 'Item Api Requests' do
     item = JSON.parse(response.body)
     expect(item["data"]["attributes"]["name"]).to eq("skate board")
   end
+
+  it 'sends all items with attribute' do
+    create(:item, name: "skate board")
+    create(:item, name: "baseball")
+    create(:item, name: "car")
+    create(:item, name: "baseball")
+
+    get '/api/v1/items/find_all?name=baseball'
+
+    expect(response).to be_successful
+
+    item = JSON.parse(response.body)
+    expect(item["data"].count).to eq(2)
+  end
 end
