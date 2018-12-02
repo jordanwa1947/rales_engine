@@ -76,7 +76,7 @@ namespace :import do
     CSV.foreach(invoice_items_csv, headers: true) do |row|
       InvoiceItem.create(id: row["id"],
                          quantity: row["quantity"],
-                         unit_price: (row["unit_price"].to_i/100).round(2).to_s,
+                         unit_price: (row["unit_price"]),
                          created_at: row["created_at"],
                          updated_at: row["updated_at"],
                          item_id: row["item_id"],

@@ -187,6 +187,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         null,
         null,
@@ -271,7 +273,7 @@
         null,
         null,
         null,
-        1,
+        0,
         null,
         null,
         1,
@@ -288,7 +290,7 @@
         null,
         null,
         null,
-        0,
+        1,
         null,
         null,
         1,
@@ -440,6 +442,13 @@
         1,
         null,
         1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
         1,
         1,
         null,
@@ -448,16 +457,8 @@
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/application_controller.rb": [
         1,
         null
-      ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/merchant_serializer.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1543785847
+    "timestamp": 1543791475
   }
 }

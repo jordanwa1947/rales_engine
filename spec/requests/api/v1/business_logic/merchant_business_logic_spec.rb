@@ -29,7 +29,7 @@ describe 'Merchant Business Logic Api Requests' do
     create(:invoice_item, invoice_id: invoice_5.id, item_id: item.id, quantity: 5, unit_price: 100)
   end
 
-  it 'returns the selected amount of top merchants' do
+  it 'returns the selected amount of top merchants by revenue' do
 
     get '/api/v1/merchants/most_revenue?quantity=3'
 
@@ -37,5 +37,24 @@ describe 'Merchant Business Logic Api Requests' do
 
     top_merchants = JSON.parse(response.body)
     expect(top_merchants['data'].count).to eq(3)
+  end
+
+  it 'returns the selected amount of top merchants by items sold' do
+
+    get '/api/v1/merchants/most_items?quantity=3'
+
+    expect(response).to be_successful
+
+    top_merchants = JSON.parse(response.body)
+    expect(top_merchants['data'].count).to eq(3)
+  end
+
+  it 'returns the revenue of all merchants for a selected date' do
+
+    get "/api/v1/merchants/revenue?date=#{Date.today}"
+
+    expect(response).to be_successful
+    top_merchants = JSON.parse(response.body)
+    expect(top_merchants['data']['attributes']['total_revenue']).to eq('45.0')
   end
 end
