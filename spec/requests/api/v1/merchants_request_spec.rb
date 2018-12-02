@@ -74,13 +74,12 @@ describe 'Merchants API' do
     end
 
     it 'sends all items associated with a merchant' do
-      get "/api/v1/merchants/#{@merchant_2.id}/items"
+      get "/api/v1/merchants/#{@item_2.merchant_id}/items"
 
       expect(response).to be_successful
 
-      merchant_items = JSON.parse(response.body)
-      items_array = merchant_items["data"].count
-      expect(items_array).to eq(2)
+      items_array = JSON.parse(response.body)
+      expect(items_array['data'].count).to eq(1)
     end
   end
 end

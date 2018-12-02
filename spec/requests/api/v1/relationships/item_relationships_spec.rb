@@ -44,5 +44,15 @@ describe 'Item Relations' do
       invoice_items = JSON.parse(response.body)
       expect(invoice_items['data'].count).to eq(2)
     end
+
+    it 'responds with the merchant an item belongs to' do
+
+      get "/api/v1/items/#{@item_4.id}/merchant"
+
+      expect(response).to be_successful
+
+      merchant = JSON.parse(response.body)
+      expect(merchant['data']['attributes']['name']).to eq("Turing")
+    end
   end
 end

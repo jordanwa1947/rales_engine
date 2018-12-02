@@ -13,6 +13,7 @@ describe 'Item Api Requests' do
   end
 
   it 'sends a single item with attribute' do
+    merchant = create(:merchant)
     create(:item, name: "skate board")
     create(:item, name: "baseball")
     create(:item, name: "car")
@@ -26,6 +27,7 @@ describe 'Item Api Requests' do
   end
 
   it 'sends all items with attribute' do
+    merchant = create(:merchant)
     create(:item, name: "skate board")
     create(:item, name: "baseball")
     create(:item, name: "car")
