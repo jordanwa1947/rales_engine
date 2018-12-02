@@ -4,6 +4,8 @@ class Customer < ApplicationRecord
   has_many :invoices
   has_many :merchants, through: :invoices
 
+  extend FindMethods
+
   def favorite_customer_merchant(customer_id)
     Merchant.select('merchants.*, COUNT(transactions.id) AS merchant_transactions')
     .joins(invoices: [:transactions])
@@ -12,11 +14,5 @@ class Customer < ApplicationRecord
     .group('merchants.id')
     .order('merchant_transactions DESC')
     .limit(1)
-  end
-
-  def self.find_by_given_param(query_params)
-    query = query_params.to_h.first
-    customer = find_by("#{query[0]} = ?", query[1])
-    customer
   end
 end
