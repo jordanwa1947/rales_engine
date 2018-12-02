@@ -6,7 +6,8 @@ Rails.application.routes.draw do
         get '/',to: 'merchants#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
-        get '/:id/items', to: 'item_association#index'
+        get '/:id/items', to: 'items_association#index'
+        get '/:id/invoices', to: 'invoices_association#index'
       end
     end
   end
@@ -64,6 +65,8 @@ Rails.application.routes.draw do
         get '/',to: 'invoice_items#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
+        get ':id/item', to: 'item_association#show'
+        get ':id/invoice', to: 'invoice_association#show'
       end
     end
   end

@@ -185,6 +185,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null,
@@ -625,14 +626,6 @@
         null,
         null
       ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/merchants/item_association_controller.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoices/transactions_association_controller.rb": [
         1,
         null,
@@ -702,6 +695,23 @@
         null,
         null
       ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/merchants/items_association_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/merchants/invoices_association_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/transactions_controller.rb": [
         1,
         1,
@@ -735,6 +745,6 @@
         null
       ]
     },
-    "timestamp": 1543776854
+    "timestamp": 1543777466
   }
 }
