@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get 'items/find', to: 'find_items#show'
       get 'items/find_all', to: 'find_items#index'
       get 'invoices/find', to: 'find_invoices#show'
+      get 'invoices/find_all', to: 'find_invoices#index'
     end
   end
 end

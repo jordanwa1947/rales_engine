@@ -24,4 +24,17 @@ describe 'Invoice API' do
     invoice = JSON.parse(response.body)
     expect(invoice["data"]["attributes"]["status"]).to eq("pending")
   end
+
+  it 'send all items with attribute' do
+    create(:invoice, status: 'shipped')
+    create(:invoice, status: 'pending')
+    create(:invoice, status: 'shipped')
+
+    get '/api/v1/invoices/find_all?status=shipped'
+
+    expect(response).to be_successful
+
+    invoice = JSON.parse(response.body)
+    expect(invoice["data"].count).to eq(2)
+  end
 end

@@ -5,6 +5,11 @@ class Api::V1::FindInvoicesController < ApplicationController
     render json: InvoiceSerializer.new(invoice).serializable_hash
   end
 
+  def index
+    invoices = Invoice.find_all_by_given_param(invoice_params)
+    render json: InvoiceSerializer.new(invoices).serializable_hash
+  end
+
   private
 
   def invoice_params
