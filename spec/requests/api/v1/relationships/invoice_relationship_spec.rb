@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Relationship Endpoints' do
-  describe 'InvoiceAssociationController' do
+  describe 'AssociationControllers' do
     before(:each) do
       @merchant_1 = create(:merchant)
       @merchant_2 = create(:merchant)
@@ -34,7 +34,7 @@ describe 'Relationship Endpoints' do
       create(:invoice_item, invoice_id: @invoice_5.id, item_id: @item_3.id, quantity: 8, unit_price: 200)
       create(:invoice_item, invoice_id: @invoice_6.id, item_id: @item_2.id, quantity: 5, unit_price: 200)
     end
-    it 'responds with transactions associated with and item' do
+    it 'responds with transactions associated with an invoice' do
 
       get "/api/v1/invoices/#{@invoice_3.id}/transactions"
 
@@ -42,6 +42,26 @@ describe 'Relationship Endpoints' do
 
       transactions = JSON.parse(response.body)
       expect(transactions["data"].count).to eq(3)
+    end
+
+    it 'responds with items associated with and invoice' do
+
+      get "/api/v1/invoices/#{@invoice_3.id}/items"
+
+      expect(response).to be_successful
+
+      items = JSON.parse(response.body)
+      expect(items["data"].count).to eq(1)
+    end
+
+    it 'responds with items associated with and invoice' do
+
+      get "/api/v1/invoices/#{@invoice_5.id}/invoice_items"
+
+      expect(response).to be_successful
+
+      invoice_items = JSON.parse(response.body)
+      expect(invoice_items["data"].count).to eq(1)
     end
   end
 end
