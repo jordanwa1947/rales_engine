@@ -196,6 +196,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         null,
         null,
@@ -255,6 +257,7 @@
         1,
         1,
         null,
+        1,
         1,
         1,
         null,
@@ -528,8 +531,6 @@
         null,
         null,
         null,
-        null,
-        null,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoices/find_controller.rb": [
@@ -634,7 +635,16 @@
         null,
         null
       ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoices/transactions_association_controller.rb": [
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/customers/invoices_association_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/customers/transactions_association_controller.rb": [
         1,
         null,
         1,
@@ -647,6 +657,33 @@
         1,
         1,
         1,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoice_items/item_association_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoice_items/invoice_association_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoices/transactions_association_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoices/items_association_controller.rb": [
@@ -762,6 +799,6 @@
         null
       ]
     },
-    "timestamp": 1543779906
+    "timestamp": 1543782953
   }
 }

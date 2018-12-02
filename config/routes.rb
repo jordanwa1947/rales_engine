@@ -18,6 +18,8 @@ Rails.application.routes.draw do
         get '/',to: 'customers#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
+        get '/:id/invoices', to: 'invoices_association#index'
+        get '/:id/transactions', to: 'transactions_association#index'
       end
     end
   end
