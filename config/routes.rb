@@ -47,6 +47,8 @@ Rails.application.routes.draw do
         get '/',to: 'invoices#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
+        get '/:id/items', to: 'item_association#index'
+        get '/:id/transactions', to: 'transaction_association#index'
       end
     end
   end
