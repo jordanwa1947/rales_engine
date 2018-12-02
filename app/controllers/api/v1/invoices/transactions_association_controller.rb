@@ -1,4 +1,4 @@
-class Api::V1::Invoices::TransactionAssociationController < ApplicationController
+class Api::V1::Invoices::TransactionsAssociationController < ApplicationController
 
   def index
     invoice_transactions = Invoice.find(params[:id]).transactions

@@ -1,6 +1,6 @@
-class Api::V1::Invoices::ItemAssociationController < ApplicationController
+class Api::V1::Invoices::ItemsAssociationController < ApplicationController
 
-  def index 
+  def index
     invoice_items = Invoice.find(params[:id]).items
     render json: ItemSerializer.new(invoice_items).serializable_hash
   end

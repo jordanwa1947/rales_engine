@@ -4,7 +4,7 @@ describe 'Relationship Endpoints' do
   describe 'AssociationControllers' do
     before(:each) do
       @merchant_1 = create(:merchant)
-      @merchant_2 = create(:merchant)
+      @merchant_2 = create(:merchant, name: "Turing")
 
       customer = create(:customer)
 
@@ -54,14 +54,34 @@ describe 'Relationship Endpoints' do
       expect(items["data"].count).to eq(1)
     end
 
-    it 'responds with items associated with and invoice' do
+    it 'responds with invoice_items associated with and invoice' do
 
-      get "/api/v1/invoices/#{@invoice_5.id}/invoice_items"
+      get "/api/v1/invoices/#{@invoice_4.id}/invoice_items"
 
       expect(response).to be_successful
 
       invoice_items = JSON.parse(response.body)
       expect(invoice_items["data"].count).to eq(1)
+    end
+
+    it 'responds with a merchant associated with and invoice' do
+
+      get "/api/v1/invoices/#{@invoice_6.id}/merchant"
+
+      expect(response).to be_successful
+
+      invoice_items = JSON.parse(response.body)
+      expect(invoice_items["data"]["attributes"]["name"]).to eq("Turing")
+    end
+
+    it 'responds with a customer associated with and invoice' do
+
+      get "/api/v1/invoices/#{@invoice_5.id}/customer"
+
+      expect(response).to be_successful
+
+      invoice_items = JSON.parse(response.body)
+      expect(invoice_items["data"]["attributes"]["last_name"]).to eq("Potter")
     end
   end
 end
