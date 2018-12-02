@@ -1,4 +1,4 @@
-class Api::V1::FindCustomersController < ApplicationController
+class Api::V1::Customers::FindController < ApplicationController
 
   def show
     customer = Customer.find_by_given_param(customer_params)
