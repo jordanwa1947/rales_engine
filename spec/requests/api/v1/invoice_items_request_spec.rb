@@ -24,4 +24,19 @@ describe 'Invoice Item Requests' do
     item = JSON.parse(response.body)
     expect(item["data"]["attributes"]["quantity"]).to eq(5)
   end
+
+  it 'returns all invoice_items with attribute' do
+    create(:invoice_item, quantity: 3)
+    create(:invoice_item, quantity: 5)
+    create(:invoice_item, quantity: 5)
+    create(:invoice_item, quantity: 1)
+    create(:invoice_item, quantity: 5)
+
+    get '/api/v1/invoice_items/find_all?quantity=5'
+
+    expect(response).to be_successful
+
+    item = JSON.parse(response.body)
+    expect(item["data"].count).to eq(3)
+  end
 end
