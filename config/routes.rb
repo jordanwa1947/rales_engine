@@ -1,37 +1,76 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      resources :merchants, only: [:index]
-      resources :customers, only: [:index]
-      resources :invoice_items, only: [:index]
-      resources :invoices, only: [:index]
-      resources :items, only: [:index]
-      resources :transactions, only: [:index]
-    end
-  end
 
   namespace :api do
     namespace :v1 do
       namespace :merchants do
+        get '/',to: 'merchants#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
-        get '/:id/items', to: 'item_association#index'
+        get '/:id/items', to: 'items_association#index'
+        get '/:id/invoices', to: 'invoices_association#index'
       end
     end
   end
 
   namespace :api do
     namespace :v1 do
-      get 'transactions/find', to: 'find_transactions#show'
-      get 'transactions/find_all', to: 'find_transactions#index'
-      get 'customers/find', to: 'find_customers#show'
-      get 'customers/find_all', to: 'find_customers#index'
-      get 'items/find', to: 'find_items#show'
-      get 'items/find_all', to: 'find_items#index'
-      get 'invoices/find', to: 'find_invoices#show'
-      get 'invoices/find_all', to: 'find_invoices#index'
-      get 'invoice_items/find', to: 'find_invoice_items#show'
-      get 'invoice_items/find_all', to: 'find_invoice_items#index'
+      namespace :customers do
+        get '/',to: 'customers#index'
+        get '/find', to: 'find#show'
+        get '/find_all', to: 'find#index'
+        get '/:id/invoices', to: 'invoices_association#index'
+        get '/:id/transactions', to: 'transactions_association#index'
+      end
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      namespace :transactions do
+        get '/',to: 'transactions#index'
+        get '/find', to: 'find#show'
+        get '/find_all', to: 'find#index'
+        get '/:id/invoice', to: 'invoice_association#show'
+      end
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      namespace :items do
+        get '/',to: 'items#index'
+        get '/find', to: 'find#show'
+        get '/find_all', to: 'find#index'
+        get '/:id/merchant', to: 'merchant_association#show'
+        get '/:id/invoice_items', to: 'invoice_items_association#index'
+      end
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      namespace :invoices do
+        get '/',to: 'invoices#index'
+        get '/find', to: 'find#show'
+        get '/find_all', to: 'find#index'
+        get '/:id/items', to: 'items_association#index'
+        get '/:id/merchant', to: 'merchant_association#show'
+        get '/:id/customer', to: 'customer_association#show'
+        get '/:id/transactions', to: 'transactions_association#index'
+        get '/:id/invoice_items', to: 'invoice_items_association#index'
+      end
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      namespace :invoice_items do
+        get '/',to: 'invoice_items#index'
+        get '/find', to: 'find#show'
+        get '/find_all', to: 'find#index'
+        get '/:id/item', to: 'item_association#show'
+        get '/:id/invoice', to: 'invoice_association#show'
+      end
     end
   end
 end

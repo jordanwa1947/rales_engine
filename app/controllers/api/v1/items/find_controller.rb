@@ -1,4 +1,4 @@
-class Api::V1::FindItemsController < ApplicationController
+class Api::V1::Items::FindController < ApplicationController
 
   def show
     item = Item.find_by_given_param(item_params)

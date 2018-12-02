@@ -15,7 +15,7 @@ RSpec.describe Merchant, type: :model do
       @merchant_1 = create(:merchant)
       @merchant_2 = create(:merchant)
       @merchant_3 = create(:merchant)
-
+  
       customer = create(:customer)
 
       invoice_1 = create(:invoice, merchant_id: @merchant_1.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: 2.day.ago)
