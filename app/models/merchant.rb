@@ -2,7 +2,11 @@ class Merchant < ApplicationRecord
   validates_presence_of :name
 
   has_many :invoices
+  has_many :invoice_items, through: :invoices
+  has_many :items, through: :invoice_items
   has_many :customers, through: :invoices
+
+  extend FindMethods
 
   def self.top_merch_by_rev(limit_amount)
     select('merchants.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS merchant_revenue')

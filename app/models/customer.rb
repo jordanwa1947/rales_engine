@@ -4,6 +4,8 @@ class Customer < ApplicationRecord
   has_many :invoices
   has_many :merchants, through: :invoices
 
+  extend FindMethods
+
   def favorite_customer_merchant(customer_id)
     Merchant.select('merchants.*, COUNT(transactions.id) AS merchant_transactions')
     .joins(invoices: [:transactions])
