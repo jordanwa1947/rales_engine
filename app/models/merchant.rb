@@ -4,6 +4,8 @@ class Merchant < ApplicationRecord
   has_many :invoices
   has_many :customers, through: :invoices
 
+  extend FindMethods
+
   def self.top_merch_by_rev(limit_amount)
     select('merchants.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS merchant_revenue')
     .joins(invoices: [:invoice_items, :transactions])

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'transactions/find_all', to: 'find_transactions#index'
       get 'customers/find', to: 'find_customers#show'
       get 'customers/find_all', to: 'find_customers#index'
+      get 'merchants/find', to: 'find_merchants#show'
     end
   end
 end
