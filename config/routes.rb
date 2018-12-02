@@ -1,18 +1,9 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      resources :merchants, only: [:index]
-      resources :customers, only: [:index]
-      resources :invoice_items, only: [:index]
-      resources :invoices, only: [:index]
-      resources :items, only: [:index]
-      resources :transactions, only: [:index]
-    end
-  end
 
   namespace :api do
     namespace :v1 do
       namespace :merchants do
+        get '/',to: 'merchants#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
         get '/:id/items', to: 'item_association#index'
@@ -23,6 +14,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :customers do
+        get '/',to: 'customers#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
       end
@@ -32,6 +24,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :transactions do
+        get '/',to: 'transactions#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
       end
@@ -41,6 +34,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :items do
+        get '/',to: 'items#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
       end
@@ -50,6 +44,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :invoices do
+        get '/',to: 'invoices#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
       end
@@ -59,6 +54,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :invoice_items do
+        get '/',to: 'invoice_items#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
       end
