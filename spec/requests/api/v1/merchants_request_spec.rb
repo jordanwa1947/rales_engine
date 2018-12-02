@@ -24,4 +24,18 @@ describe 'Merchants API' do
     merchants = JSON.parse(response.body)
     expect(merchants["data"]["attributes"]["name"]).to eq("Best Buy")
   end
+
+  it 'sends all merchant with attribute' do
+    create(:merchant, name: 'Mcdonalds')
+    create(:merchant, name: 'Turing')
+    create(:merchant, name: 'Best Buy')
+    create(:merchant, name: 'Turing')
+
+    get '/api/v1/merchants/find_all?name=Turing'
+
+    expect(response).to be_successful
+
+    merchants = JSON.parse(response.body)
+    expect(merchants["data"].count).to eq(2)
+  end
 end
