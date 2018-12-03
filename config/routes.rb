@@ -6,12 +6,15 @@ Rails.application.routes.draw do
         get '/',to: 'merchants#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
+        get '/random.json', to: 'random_merchant#show'
         get '/:id/items', to: 'items_association#index'
         get '/:id/invoices', to: 'invoices_association#index'
         get '/most_revenue', to: 'merchants_revenue#index'
         get '/most_items', to: 'merchants_sold#index'
         get '/revenue', to: 'merchants_revenue#show'
         get '/:id/revenue', to: 'merchants_revenue#show'
+        get '/:id/favorite_customer', to: 'favorite_customer#show'
+        get '/:id',to: 'merchants#show'
       end
     end
   end
@@ -32,10 +35,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :transactions do
-        get '/',to: 'transactions#index'
+        get '/', to: 'transactions#index'
         get '/find', to: 'find#show'
         get '/find_all', to: 'find#index'
         get '/:id/invoice', to: 'invoice_association#show'
+        get '/:id', to: 'transactions#show'
       end
     end
   end

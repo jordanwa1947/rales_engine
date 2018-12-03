@@ -35,7 +35,6 @@ describe 'Customer Business Logic Api Requests' do
     expect(response).to be_successful
 
     merchant = JSON.parse(response.body)
-    binding.pry 
     expect(merchant["data"]["attributes"]["id"]).to eq(merchant_2.id)
   end
 end

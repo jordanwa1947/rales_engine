@@ -38,4 +38,32 @@ describe 'Merchants API' do
     merchants = JSON.parse(response.body)
     expect(merchants["data"].count).to eq(2)
   end
+
+  it 'sends a random merchant' do
+    create(:merchant, name: 'Mcdonalds')
+    create(:merchant, name: 'Turing')
+    create(:merchant, name: 'Best Buy')
+    create(:merchant, name: 'Turing')
+
+    get '/api/v1/merchants/random.json'
+
+    expect(response).to be_successful
+
+    merchants = JSON.parse(response.body)
+    expect(merchants["data"].count).to eq(1)
+  end
+
+  it 'sends one merchant found by id' do
+    create(:merchant, name: 'Mcdonalds')
+    create(:merchant, name: 'Turing')
+    create(:merchant, name: 'Best Buy')
+    merchant = create(:merchant, name: 'Turing')
+
+    get "/api/v1/merchants/#{merchant.id}"
+
+    expect(response).to be_successful
+
+    merchants = JSON.parse(response.body)
+    expect(merchants["data"]["attributes"]["name"]).to eq("Turing")
+  end
 end

@@ -6,13 +6,13 @@ describe 'Merchant Business Logic Api Requests' do
     @merchant_2 = create(:merchant)
     @merchant_3 = create(:merchant)
 
-    customer = create(:customer)
+    @customer = create(:customer)
 
-    invoice_1 = create(:invoice, merchant_id: @merchant_1.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: 2.days.ago)
-    invoice_2 = create(:invoice, merchant_id: @merchant_2.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
-    invoice_3 = create(:invoice, merchant_id: @merchant_2.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
-    invoice_4 = create(:invoice, merchant_id: @merchant_3.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
-    invoice_5 = create(:invoice, merchant_id: @merchant_3.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
+    invoice_1 = create(:invoice, merchant_id: @merchant_1.id, customer_id: @customer.id, status: 'success', created_at: 3.days.ago, updated_at: 2.days.ago)
+    invoice_2 = create(:invoice, merchant_id: @merchant_2.id, customer_id: @customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
+    invoice_3 = create(:invoice, merchant_id: @merchant_2.id, customer_id: @customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
+    invoice_4 = create(:invoice, merchant_id: @merchant_3.id, customer_id: @customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
+    invoice_5 = create(:invoice, merchant_id: @merchant_3.id, customer_id: @customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
 
     create(:transaction, invoice_id: invoice_1.id)
     create(:transaction, invoice_id: invoice_2.id)
@@ -57,13 +57,14 @@ describe 'Merchant Business Logic Api Requests' do
     top_merchants = JSON.parse(response.body)
     expect(top_merchants['data']['attributes']['total_revenue']).to eq('45.0')
   end
+
   it 'returns the revenue of one merchant' do
 
     get "/api/v1/merchants/#{@merchant_2.id}/revenue"
 
     expect(response).to be_successful
-    top_merchants = JSON.parse(response.body)
-    expect(top_merchants['data']['attributes']['revenue']).to eq('30.0')
+    favorite_customer = JSON.parse(response.body)
+    expect(favorite_customer['data'].count).to eq(1)
   end
 
   it 'returns the revenue of one merchant for a selected date' do
@@ -73,5 +74,15 @@ describe 'Merchant Business Logic Api Requests' do
     expect(response).to be_successful
     top_merchants = JSON.parse(response.body)
     expect(top_merchants['data']['attributes']['revenue']).to eq('8.0')
+  end
+
+  it 'returns the customer who conducted the most transactions with a merchant' do
+
+    get "/api/v1/merchants/#{@merchant_1.id}/favorite_customer"
+
+    expect(response).to be_successful
+
+    top_merchants = JSON.parse(response.body)
+    expect(top_merchants['data']['attributes']['id']).to eq(@customer.id)
   end
 end
