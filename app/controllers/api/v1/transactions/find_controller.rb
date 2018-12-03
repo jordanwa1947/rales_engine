@@ -12,7 +12,7 @@ class Api::V1::Transactions::FindController < ApplicationController
 
   private
     def query_params
-      params.permit(:invoice,
+      params.permit(:invoice_id,
                     :credit_card_number,
                     :credit_card_expiration_date,
                     :created_at,

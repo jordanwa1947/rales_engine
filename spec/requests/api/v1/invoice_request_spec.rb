@@ -37,4 +37,17 @@ describe 'Invoice API' do
     invoice = JSON.parse(response.body)
     expect(invoice["data"].count).to eq(2)
   end
+
+  it 'send one item by id' do
+    create(:invoice, status: 'shipped')
+    create(:invoice, status: 'pending')
+    new_invoice = create(:invoice, status: 'shipped')
+
+    get "/api/v1/invoices/#{new_invoice.id}"
+
+    expect(response).to be_successful
+
+    invoice = JSON.parse(response.body)
+    expect(invoice["data"]["attributes"]["id"]).to eq(new_invoice.id)
+  end
 end

@@ -37,4 +37,17 @@ describe 'Customers API' do
     customers = JSON.parse(response.body)
     expect(customers["data"].count).to eq(2)
   end
+
+  it 'sends one customer by id' do
+    create(:customer, first_name: "James")
+    new_customer = create(:customer, first_name: "James")
+    create(:customer)
+
+    get "/api/v1/customers/#{new_customer.id}"
+
+    expect(response).to be_successful
+
+    customer = JSON.parse(response.body)
+    expect(customer["data"]["attributes"]["id"]).to eq(new_customer.id)
+  end
 end

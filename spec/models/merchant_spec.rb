@@ -15,7 +15,7 @@ RSpec.describe Merchant, type: :model do
       @merchant_1 = create(:merchant)
       @merchant_2 = create(:merchant)
       @merchant_3 = create(:merchant)
-  
+
       customer = create(:customer)
 
       invoice_1 = create(:invoice, merchant_id: @merchant_1.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: 2.day.ago)
@@ -84,5 +84,37 @@ RSpec.describe Merchant, type: :model do
     it 'favorite_customer' do
       expect(@merchant.favorite_customer).to eq(@customer_2)
     end
+  end
+end
+
+describe 'Boss Mode' do
+  it 'customers_with_pending_invoices' do
+    customer_1 = create(:customer)
+    customer_2 = create(:customer)
+    customer_3 = create(:customer)
+    customer_4 = create(:customer)
+    customer_5 = create(:customer)
+
+    invoice_1 = create(:invoice, status: 'success', customer_id: customer_1.id)
+    invoice_2 = create(:invoice, status: 'pending', customer_id: customer_2.id)
+    invoice_3 = create(:invoice, status: 'success', customer_id: customer_3.id)
+    invoice_4 = create(:invoice, status: 'pending', customer_id: customer_4.id)
+    invoice_5 = create(:invoice, status: 'pending', customer_id: customer_5.id)
+
+    create(:transaction, invoice_id: invoice_1.id)
+    create(:transaction, invoice_id: invoice_2.id, result: 'failed')
+    create(:transaction, invoice_id: invoice_3.id)
+    create(:transaction, invoice_id: invoice_4.id, result: 'failed')
+    create(:transaction, invoice_id: invoice_5.id, result: 'failed')
+
+    item = create(:item)
+
+    create(:invoice_item, invoice_id: invoice_1.id, item_id: item.id, quantity: 16, unit_price: 50)
+    create(:invoice_item, invoice_id: invoice_2.id, item_id: item.id, quantity: 2, unit_price: 300)
+    create(:invoice_item, invoice_id: invoice_3.id, item_id: item.id, quantity: 12, unit_price: 200)
+    create(:invoice_item, invoice_id: invoice_4.id, item_id: item.id, quantity: 10, unit_price: 100)
+    create(:invoice_item, invoice_id: invoice_5.id, item_id: item.id, quantity: 5, unit_price: 100)
+
+    expect(Merchant.customers_with_pending_invoices(invoice_4.merchant_id).count).to eq(1)
   end
 end
