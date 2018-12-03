@@ -55,6 +55,7 @@ Rails.application.routes.draw do
         get '/most_revenue', to: 'items_revenue#index'
         get '/most_items', to: 'items_sold#index'
         get '/:id/best_day', to: 'item_date#show'
+        get '/:id', to: 'items#show'
       end
     end
   end
@@ -70,6 +71,7 @@ Rails.application.routes.draw do
         get '/:id/customer', to: 'customer_association#show'
         get '/:id/transactions', to: 'transactions_association#index'
         get '/:id/invoice_items', to: 'invoice_items_association#index'
+        get '/:id', to: 'invoices#show'
       end
     end
   end
