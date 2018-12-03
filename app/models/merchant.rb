@@ -66,4 +66,17 @@ class Merchant < ApplicationRecord
     customer = find_favorite_customer
     Customer.find(customer[0].id)
   end
+
+  def self.customers_with_pending_invoices(merch_id)
+    find_by_sql("SELECT customers.*
+    FROM customers
+    INNER JOIN invoices
+    ON customers.id = invoices.customer_id
+    INNER JOIN transactions ON invoices.id = transactions.invoice_id
+    WHERE invoices.merchant_id = #{merch_id}
+    AND transactions.result = ALL
+    (SELECT transactions.result
+    FROM transactions
+    WHERE transactions.result = 'failed');")
+  end
 end

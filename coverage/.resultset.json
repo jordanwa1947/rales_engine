@@ -193,6 +193,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null,
@@ -300,10 +301,20 @@
         1,
         8,
         8,
+        0,
+        8,
+        0,
+        null,
+        8,
         null,
         null,
         1,
         7,
+        7,
+        0,
+        7,
+        0,
+        null,
         7,
         null,
         null
@@ -440,6 +451,19 @@
         2,
         2,
         null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/models/transaction.rb": [
@@ -490,6 +514,10 @@
         null,
         null,
         null,
+        null,
+        null,
+        1,
+        17,
         null,
         null
       ],
@@ -567,6 +595,15 @@
         1,
         1,
         1,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/merchants/pending_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/customers_controller.rb": [
@@ -727,6 +764,7 @@
         null,
         1,
         2,
+        null,
         null,
         null,
         null,
@@ -949,6 +987,6 @@
         null
       ]
     },
-    "timestamp": 1543818118
+    "timestamp": 1543845640
   }
 }

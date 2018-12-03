@@ -18,6 +18,7 @@ class Api::V1::Items::FindController < ApplicationController
                    :unit_price,
                    :created_at,
                    :updated_at,
+                   :merchant_id,
                    :id)
   end
 end
