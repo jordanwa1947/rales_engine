@@ -25,7 +25,7 @@ class Item < ApplicationRecord
     .limit(limit_amount)
   end
 
-  def top_rev_date_for_item(date)
+  def top_rev_date_for_item
     invoices
     .select('invoices.updated_at, SUM(invoice_items.quantity * invoice_items.unit_price) AS revenue')
     .joins(:invoice_items, :transactions)

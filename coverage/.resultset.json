@@ -225,6 +225,9 @@
         1,
         1,
         1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -335,7 +338,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -344,7 +347,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -355,7 +358,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null
       ],
@@ -439,6 +442,50 @@
         1,
         null
       ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/items/items_revenue_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/item_serializer.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/items/items_sold_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/items/item_date_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/merchants/merchants_revenue_controller.rb": [
         1,
         null,
@@ -467,10 +514,6 @@
         1,
         null,
         null,
-        null
-      ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/application_controller.rb": [
-        1,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/merchant_serializer.rb": [
@@ -619,16 +662,6 @@
         null,
         1,
         1,
-        null,
-        null
-      ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/item_serializer.rb": [
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
         null,
         null
       ],
@@ -854,6 +887,6 @@
         null
       ]
     },
-    "timestamp": 1543794615
+    "timestamp": 1543806289
   }
 }

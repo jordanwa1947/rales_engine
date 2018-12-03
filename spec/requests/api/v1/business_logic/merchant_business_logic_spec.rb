@@ -8,7 +8,7 @@ describe 'Merchant Business Logic Api Requests' do
 
     customer = create(:customer)
 
-    invoice_1 = create(:invoice, merchant_id: @merchant_1.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: 1.day.ago)
+    invoice_1 = create(:invoice, merchant_id: @merchant_1.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: 2.days.ago)
     invoice_2 = create(:invoice, merchant_id: @merchant_2.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
     invoice_3 = create(:invoice, merchant_id: @merchant_2.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
     invoice_4 = create(:invoice, merchant_id: @merchant_3.id, customer_id: customer.id, status: 'success', created_at: 3.days.ago, updated_at: Date.today)
@@ -68,7 +68,7 @@ describe 'Merchant Business Logic Api Requests' do
 
   it 'returns the revenue of one merchant for a selected date' do
 
-    get "/api/v1/merchants/#{@merchant_1.id}/revenue?date=#{1.day.ago}"
+    get "/api/v1/merchants/#{@merchant_1.id}/revenue?date=#{2.days.ago}"
 
     expect(response).to be_successful
     top_merchants = JSON.parse(response.body)

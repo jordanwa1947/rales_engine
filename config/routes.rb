@@ -47,6 +47,9 @@ Rails.application.routes.draw do
         get '/find_all', to: 'find#index'
         get '/:id/merchant', to: 'merchant_association#show'
         get '/:id/invoice_items', to: 'invoice_items_association#index'
+        get '/most_revenue', to: 'items_revenue#index'
+        get '/most_items', to: 'items_sold#index'
+        get '/:id/best_day', to: 'item_date#show'
       end
     end
   end

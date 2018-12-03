@@ -85,7 +85,7 @@ RSpec.describe Item, type: :model do
       create(:invoice_item, invoice_id: invoice_5.id, item_id: item_3.id, quantity: 8, unit_price: 200)
       create(:invoice_item, invoice_id: invoice_6.id, item_id: item_3.id, quantity: 5, unit_price: 200)
 
-      expect(item_3.top_rev_date_for_item(1.day.ago)).to eq(invoice_5.updated_at)
+      expect(item_3.top_rev_date_for_item).to eq(invoice_5.updated_at)
     end
   end
 end

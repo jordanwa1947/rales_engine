@@ -3,6 +3,6 @@ class ItemSerializer
   attributes :id,
              :description,
              :name,
-             :unit_price, 
+             :unit_price,
              :merchant_id
 end
