@@ -186,14 +186,6 @@
         1,
         1,
         1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -209,10 +201,26 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -270,7 +278,7 @@
         null,
         null,
         null,
-        1,
+        3,
         null,
         null
       ],
@@ -331,7 +339,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -340,7 +348,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -351,7 +359,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null
       ],
@@ -372,7 +380,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -381,7 +389,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -389,7 +397,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -397,7 +405,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -406,7 +414,7 @@
         null,
         null,
         null,
-        1,
+        2,
         null,
         null,
         1,
@@ -435,9 +443,11 @@
         1,
         null
       ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/customers_controller.rb": [
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/customers/favorite_merchant_controller.rb": [
         1,
         null,
+        1,
+        1,
         1,
         1,
         null,
@@ -445,6 +455,102 @@
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/application_controller.rb": [
         1,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/merchant_serializer.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/items/items_revenue_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/item_serializer.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/items/items_sold_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/items/item_date_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/merchants/merchants_revenue_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/merchants/merchants_sold_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/customers_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/customer_serializer.rb": [
@@ -488,6 +594,10 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoice_items/find_controller.rb": [
@@ -566,12 +676,6 @@
         null,
         null
       ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/item_serializer.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/items/find_controller.rb": [
         1,
         null,
@@ -602,14 +706,6 @@
         1,
         1,
         null,
-        null
-      ],
-      "/Users/jaw/Turing/3module/projects/rales_engine/app/serializers/merchant_serializer.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/merchants/find_controller.rb": [
@@ -657,6 +753,9 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/jaw/Turing/3module/projects/rales_engine/app/controllers/api/v1/invoice_items/item_association_controller.rb": [
@@ -799,6 +898,6 @@
         null
       ]
     },
-    "timestamp": 1543782953
+    "timestamp": 1543809069
   }
 }

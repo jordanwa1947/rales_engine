@@ -8,6 +8,10 @@ Rails.application.routes.draw do
         get '/find_all', to: 'find#index'
         get '/:id/items', to: 'items_association#index'
         get '/:id/invoices', to: 'invoices_association#index'
+        get '/most_revenue', to: 'merchants_revenue#index'
+        get '/most_items', to: 'merchants_sold#index'
+        get '/revenue', to: 'merchants_revenue#show'
+        get '/:id/revenue', to: 'merchants_revenue#show'
       end
     end
   end
@@ -20,6 +24,7 @@ Rails.application.routes.draw do
         get '/find_all', to: 'find#index'
         get '/:id/invoices', to: 'invoices_association#index'
         get '/:id/transactions', to: 'transactions_association#index'
+        get '/:id/favorite_merchant', to: 'favorite_merchant#show'
       end
     end
   end
@@ -43,6 +48,9 @@ Rails.application.routes.draw do
         get '/find_all', to: 'find#index'
         get '/:id/merchant', to: 'merchant_association#show'
         get '/:id/invoice_items', to: 'invoice_items_association#index'
+        get '/most_revenue', to: 'items_revenue#index'
+        get '/most_items', to: 'items_sold#index'
+        get '/:id/best_day', to: 'item_date#show'
       end
     end
   end
