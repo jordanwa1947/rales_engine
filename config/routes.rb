@@ -24,6 +24,7 @@ Rails.application.routes.draw do
         get '/find_all', to: 'find#index'
         get '/:id/invoices', to: 'invoices_association#index'
         get '/:id/transactions', to: 'transactions_association#index'
+        get '/:id/favorite_merchant', to: 'favorite_merchant#show'
       end
     end
   end

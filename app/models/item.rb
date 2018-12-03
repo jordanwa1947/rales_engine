@@ -31,7 +31,7 @@ class Item < ApplicationRecord
     .joins(:invoice_items, :transactions)
     .where(transactions: {result: 'success'})
     .group('invoices.updated_at')
-    .order('revenue DESC')
+    .order('revenue DESC, updated_at ASC')
     .limit(1)[0]
     .updated_at
   end
